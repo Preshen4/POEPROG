@@ -17,7 +17,6 @@ namespace NovelNestLibraryAPI.Controllers
         public async Task<List<Users>> Get() =>
             await _UserService.GetAsync();
 
-
         // POST api/user/signup
         [HttpPost("signup")]
         public async Task<IActionResult> Signup([FromBody] Users user)
@@ -29,15 +28,6 @@ namespace NovelNestLibraryAPI.Controllers
                     return BadRequest(new { message = "User data is missing" });
                 }
 
-                if (!IsValid(user.Username))
-                {
-                    return BadRequest(new { message = "Invalid username format" });
-                }
-
-                if (!IsValid(user.Email))
-                {
-                    return BadRequest(new { message = "Invalid email format" });
-                }
 
                 // Check if the username or email is already in use
                 if (await _UserService.IsUsernameOrEmailTakenAsync(user.Username, user.Email))
@@ -60,41 +50,32 @@ namespace NovelNestLibraryAPI.Controllers
 
         // POST api/user/login
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginRequestModel model)
+        public async Task<Users?> Login([FromBody] LoginRequestModel model)
         {
-
             try
             {
-                if (model.Email == null || model.Password == null)
+                if (model != null)
                 {
-                    return BadRequest(new { message = "Login data is missing" });
-                }
-
-                if (!IsValid(model.Email))
-                {
-                    return BadRequest(new { message = "Invalid email" });
+                    BadRequest(new { message = "Login data is missing" });
+                    return null;
                 }
 
                 var user = await _UserService.FindUserAsync(model.Email, model.Password);
 
                 if (user == null)
                 {
-                    return BadRequest(new { message = "Account Not Found" });
+                    BadRequest(new { message = "Account Not Found" });
+                    return null;
                 }
 
-                return Ok(new { message = "Login successful" });
+                return user;
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { message = "Internal server error" });
+                StatusCode(500, new { message = "Internal server error" });
+                return null;
             }
         }
-
-        private bool IsValid(string name)
-        {
-            return !string.IsNullOrWhiteSpace(name) && name.Contains("@");
-        }
-
 
         [HttpPost]
         public async Task<IActionResult> Post(Users newUsers)

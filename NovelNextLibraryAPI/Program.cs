@@ -17,15 +17,15 @@ builder.Services.AddControllers()
     .AddJsonOptions(
         options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-app.UseCors(options => options.WithOrigins("http://localhost:3001").AllowAnyMethod().AllowAnyHeader());
+// Change to match the URL of your react app 
 app.UseCors(options => options.WithOrigins("http://localhost:3000").AllowAnyMethod().AllowAnyHeader());
-app.UseCors(options => options.WithOrigins("http://localhost:3002").AllowAnyMethod().AllowAnyHeader());
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

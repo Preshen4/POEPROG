@@ -14,11 +14,6 @@ namespace NovelNestLibraryAPI.Models
         public string Email { get; set; }
         [BsonElement("Password")]
         public string Password { get; set; }
-        public int ReplaceScore { get; set; } = 0;
-        public int IdAreaScore { get; set; } = 0;
-        public int FindCallNumScore { get; set; } = 0;
-        public int TotalScore { get; set; } = 0;
-
 
     }
 }

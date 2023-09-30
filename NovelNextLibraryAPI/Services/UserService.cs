@@ -35,13 +35,13 @@ public class UserService
     public async Task RemoveAsync(string id) =>
         await _usersCollection.DeleteOneAsync(x => x.Id == id);
 
-    public async Task<bool> IsUsernameOrEmailTakenAsync(string username, string email) 
+    public async Task<bool> IsUsernameOrEmailTakenAsync(string username, string email)
     {
         var user = await _usersCollection.Find(x => x.Username == username || x.Email == email).FirstOrDefaultAsync();
         return user != null;
     }
 
-    public async Task<Users?> FindUserAsync(string email, string password)=>
+    public async Task<Users> FindUserAsync(string email, string password) =>
         await _usersCollection.Find(x => (x.Email == email) && (x.Password == password)).FirstOrDefaultAsync();
-    
+
 }

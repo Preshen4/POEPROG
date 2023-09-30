@@ -25,7 +25,7 @@ namespace NovelNestLibraryAPI.Services
         public async Task<List<LeaderBoard>> GetAllLeaderboardEntriesAsync()
         {
             return await _leaderboardCollection.Find(_ => true)
-                .SortBy(entry => entry.Score)
+                .SortByDescending(entry => entry.Score)
                 .ToListAsync();
         }
 
@@ -52,14 +52,21 @@ namespace NovelNestLibraryAPI.Services
 
         public async Task UpdateLeaderboardEntryAsync(string userName, int newScore)
         {
-            var filter = Builders<LeaderBoard>.Filter.Eq(entry => entry.UserName, userName);
-            var update = Builders<LeaderBoard>.Update.Set(entry => entry.Score, newScore);
 
-            await _leaderboardCollection.UpdateOneAsync(filter, update);
+            var filter = Builders<LeaderBoard>.Filter.Eq(entry => entry.UserName, userName);
+            var currentEntry = await _leaderboardCollection.Find(filter).FirstOrDefaultAsync();
+
+            if (currentEntry != null && newScore > currentEntry.Score)
+            {
+                var update = Builders<LeaderBoard>.Update.Set(entry => entry.Score, newScore);
+                await _leaderboardCollection.UpdateOneAsync(filter, update);
+            }
         }
+
         public async Task<LeaderBoard> GetLeaderboardEntryAsync(string userName)
         {
             return await _leaderboardCollection.Find(entry => entry.UserName == userName).FirstOrDefaultAsync();
         }
+
     }
 }

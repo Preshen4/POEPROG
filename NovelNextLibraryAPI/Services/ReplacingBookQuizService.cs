@@ -29,27 +29,6 @@ namespace NovelNestLibraryAPI.Services
             return quiz;
         }
 
-        // https://www.geeksforgeeks.org/insertion-sort/?ref=lbp
-        // Insertion Sort
-        //public async Task<List<string>> GenerateCorrectOrder(List<string> callNumber)
-        //{
-        //    for (int i = 1; i < callNumber.Count; i++)
-        //    {
-        //        string currentCallNumber = callNumber[i];
-        //        int j = i - 1;
-
-        //        while (j >= 0 && string.Compare(callNumber[j], currentCallNumber) > 0)
-        //        {
-        //            callNumber[j + 1] = callNumber[j];
-        //            j--;
-        //        }
-
-        //        callNumber[j + 1] = currentCallNumber;
-        //    }
-
-        //    return callNumber;
-        //}
-
         public async Task<List<string>> GenerateCorrectOrder(List<string> callNumber)
         {
             // Create a copy of callNumber before sorting
@@ -77,7 +56,7 @@ namespace NovelNestLibraryAPI.Services
             List<string> callNumber = new List<string>();
             for (int i = 1; i <= 10; i++)
             {
-                callNumber.Add( $"{GenerateRandomNumber():F2} {GenerateRandomAuthorInitials()}");
+                callNumber.Add($"{GenerateRandomNumber():F2} {GenerateRandomAuthorInitials()}");
             }
             return callNumber;
         }
