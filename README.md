@@ -32,11 +32,12 @@ This React based web app, with a C# API, transforms the learning process into an
 ## How to Install the Project
 
 1. Make sure you have the C# API open in Visual Studio and the React app open in Visual Studio Code.
-2. Once the pre-requistes are installed run the react app by opening the terminial and entering this line: 'npm start dev'.
-3. Once the app is running go into Visual Studio and open the program.cs file.
-4. If your url doesn't match this http://localhost:3000 please change this line of code to have your url : app.UseCors(options => options.WithOrigins("http://localhost:3000").AllowAnyMethod().AllowAnyHeader());
-5. Run the Visual Studio app.
-6. Once both are running you can now use the app.
+2. In Visual Studio Code open the terminal and run this line of code: 'npm i'.
+3. Once the pre-requistes are installed run the react app by opening the terminial and entering this line: 'npm start dev'.
+4. Once the app is running go into Visual Studio and open the program.cs file.
+5. If your url doesn't match this http://localhost:3000 please change this line of code to have your url : app.UseCors(options => options.WithOrigins("http://localhost:3000").AllowAnyMethod().AllowAnyHeader());
+6. Run the Visual Studio app.
+7. Once both are running you can now use the app.
 
 ## How to Use the Project
 
