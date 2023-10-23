@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XlQ0O3pb1iVELSG6Lq8xF6onTnthUOtGTN9fMCt915PUQDp7sIV9QBxAJmHVNH8dwWylYgfD0l7OOz1eyML0dw==",
+  "dgSpecHash": "349jRmH1TIqGYDM1ktD5nhb6hd9RPNHWCs8TsGz8tx4fQRuOyWAyEoQjEeMopJgDwehu34/bERuwIVsrTJ/M5w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Preshen Govender\\Desktop\\Tut\\NovelNextLibraryAPI\\NovelNestLibraryAPI.csproj",
+  "projectFilePath": "C:\\Users\\Preshen Govender\\Desktop\\New folder (4)\\prog7312-part-1-Preshen4\\NovelNestLibraryAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Preshen Govender\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\Preshen Govender\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",

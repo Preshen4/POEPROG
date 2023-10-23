@@ -13,6 +13,7 @@ builder.Services.Configure<NovelNestLibraryDatabaseSettings>(
 builder.Services.AddSingleton<UserService>();
 builder.Services.AddSingleton<ReplacingBookQuizService>();
 builder.Services.AddSingleton<LeaderboardService>();
+builder.Services.AddSingleton<IdentifyingAreaService>();
 builder.Services.AddControllers()
     .AddJsonOptions(
         options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
