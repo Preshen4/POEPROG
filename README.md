@@ -2,7 +2,7 @@
 
 **Title:** POE ST10083954
 
-**Version:** 1.0
+**Version:** 2.0
 
 **Link:** [Novel Nest Library React App](https://github.com/Preshen4/novel-nest-library-PROG_POE)
 
