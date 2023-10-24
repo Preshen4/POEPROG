@@ -13,7 +13,7 @@ namespace NovelNestLibraryAPI.Controllers
         public IdentifyingAreaController(IdentifyingAreaService identifyingAreaService) => 
             _identifyingAreaService = identifyingAreaService;
 
-        [HttpGet("generateIdentifyingAreaQuiz")]
+        [HttpGet("generateQuiz")]
         public ActionResult<object> GetQuizQuestions()
         {
             var (questions, possibleAnswers) = _identifyingAreaService.GetQuizQuestions();
@@ -42,7 +42,7 @@ namespace NovelNestLibraryAPI.Controllers
                 }
                 else
                 {
-                    return BadRequest(false);
+                    return Ok(false);
                 }
             }
             else
@@ -55,7 +55,7 @@ namespace NovelNestLibraryAPI.Controllers
                 }
                 else
                 {
-                    return BadRequest(false);
+                    return Ok(false);
                 }
             }
 

@@ -11,15 +11,15 @@ namespace NovelNestLibraryAPI.Services
         private readonly Dictionary<string, string> quizData = new Dictionary<string, string>
         {
             { "000", "General Knowledge" },
-            { "100", "Philosophy" },
+            { "100", "Philosophy & Psychology" },
             { "200", "Religion" },
             { "300", "Social Science" },
             { "400", "Languages" },
             { "500", "Science" },
             { "600", "Technology" },
-            { "700", "Arts and Recreation" },
+            { "700", "Arts & Recreation" },
             { "800", "Literature" },
-            { "900", "History" }
+            { "900", "History & Geography" }
         };
 
         public (List<string> questions, List<string> answers) GetQuizQuestions()
