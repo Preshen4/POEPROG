@@ -42,6 +42,7 @@ This React based web app, with a C# API, transforms the learning process into an
 ## How to Use the Project
 
 [Tut Video](https://youtu.be/nX8n9xqQk1M)
+[Part 2 Feature](https://youtu.be/o7Ez7GfjIo0)
 
 ## What I Would Like to Add
 
