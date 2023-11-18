@@ -14,6 +14,7 @@ builder.Services.AddSingleton<UserService>();
 builder.Services.AddSingleton<ReplacingBookQuizService>();
 builder.Services.AddSingleton<LeaderboardService>();
 builder.Services.AddSingleton<IdentifyingAreaService>();
+builder.Services.AddSingleton<FindCallNumberService>();
 builder.Services.AddControllers()
     .AddJsonOptions(
         options => options.JsonSerializerOptions.PropertyNamingPolicy = null);

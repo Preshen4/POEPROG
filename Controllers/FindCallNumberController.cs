@@ -17,16 +17,16 @@ namespace NovelNestLibraryAPI.Controllers
             _treeService = treeService;
         }
 
-        [HttpGet]
-        public ActionResult<Tree<CallNumberModel>> Get()
+        [HttpGet("CreateTree")]
+        public void Get()
         {
-            return _treeService.CreateTree();
+            _treeService.CreateTree();
         }
 
-        [HttpGet("{callNumber}")]
+        [HttpGet("GetPath/{callNumber}")]
         public ActionResult<List<int>> Get(int callNumber)
         {
-            return _treeService.FindCallNumber(callNumber);
+            return _treeService.GetPathToNode(callNumber);
         }
     }
 }

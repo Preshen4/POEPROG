@@ -6,7 +6,7 @@ namespace NovelNestLibraryAPI.Services
     public class FindCallNumberService
     {
         private static readonly string _path = Path.Combine(Directory.GetCurrentDirectory(), "Data.txt");
-        string path = "C://Repos//prog7312-part-2-Preshen4//Data.txt";
+        string path = "C://Repos//POEPROG//Data.txt";
         private Tree<CallNumberModel> tree = new Tree<CallNumberModel>(new CallNumberModel(9999, "root"));
         public Tree<CallNumberModel> CreateTree()
         {
@@ -54,7 +54,7 @@ namespace NovelNestLibraryAPI.Services
 
         }
 
-        public List<int> FindCallNumber(int callNumber)
+        public List<int> GetPathToNode(int callNumber)
         {
             List<TreeNode<CallNumberModel>> pathToTarget = tree.FindPath(tree, callNumber);
             List<int> path = new List<int>();
@@ -62,7 +62,7 @@ namespace NovelNestLibraryAPI.Services
             {
                 path.Add(node.Data.CallNumber);
             }
-            path.Remove(0);
+            path.RemoveAt(0);
             return path;
         }
 
