@@ -48,45 +48,32 @@ namespace NovelNestLibraryAPI.Services
             var allChildren = tree.Root.Children.ToList();
             allChildren.Shuffle(new Random());
 
-            // Select 4 random children
-            var selectedChildren = allChildren.Take(4).ToList();
-
-            // Get children of the first child
-            var firstChild = allChildren.FirstOrDefault();
-            var firstChildChildren = firstChild?.Children.Take(4).ToList();
-
-            // Get children of the first grandchild
-            var firstGrandchild = firstChildChildren.FirstOrDefault();
-            var firstGrandchildChildren = firstGrandchild?.Children.Take(4).ToList();
-
             var questions = new List<List<CallNumberModel>>();
 
-            List<CallNumberModel> question = new List<CallNumberModel>();
-            CallNumberModel callNumberModel;
+            // Create a question for selectedChildren
+            questions.Add(CreateQuestion(allChildren.Take(4)));
 
-            foreach (var child in selectedChildren)
+            // Create a question for firstChildChildren
+            var firstChild = allChildren.FirstOrDefault();
+            if (firstChild != null)
             {
-                callNumberModel = new CallNumberModel(child.Data.CallNumber, child.Data.Description);
-                question.Add(callNumberModel);
+                questions.Add(CreateQuestion(firstChild.Children.Take(4)));
             }
-            questions.Add(question);
-            List<CallNumberModel> question2 = new List<CallNumberModel>();
-            foreach (var item in firstChildChildren)
+
+            // Create a question for firstGrandchildChildren
+            var firstGrandchild = firstChild?.Children.FirstOrDefault();
+            if (firstGrandchild != null)
             {
-                callNumberModel = new CallNumberModel(item.Data.CallNumber, item.Data.Description);
-                question2.Add(callNumberModel);
+                questions.Add(CreateQuestion(firstGrandchild.Children.Take(4)));
             }
-            questions.Add(question2);
-            List<CallNumberModel> question3 = new List<CallNumberModel>();
-            foreach (var item in firstGrandchildChildren)
-            {
-                callNumberModel = new CallNumberModel(item.Data.CallNumber, item.Data.Description);
-                question3.Add(callNumberModel);
-            }
-            questions.Add(question3);
+
             return questions;
         }
 
+        private List<CallNumberModel> CreateQuestion(IEnumerable<TreeNode<CallNumberModel>> nodes)
+        {
+            return nodes.Select(node => new CallNumberModel(node.Data.CallNumber, node.Data.Description)).ToList();
+        }
 
         private int CountTabsAtBeginning(string line)
         {
