@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NovelNestLibraryAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b6bfc3689fb6a8d223d7a2252bc5e15f8e4af40")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+85b1442e9571e1d8b1ad142535a90ac9e930813c")]
 [assembly: System.Reflection.AssemblyProductAttribute("NovelNestLibraryAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NovelNestLibraryAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,5 +1,8 @@
 ﻿namespace NovelNestLibraryAPI.Tree
 {
+    // Create a Tree Node class
+    // https://codereview.stackexchange.com/questions/163957/building-a-tree-from-a-flat-listnodes
+    // Author: Heslacher
     public class TreeNode<T>
     {
         public T Data { get; set; }
