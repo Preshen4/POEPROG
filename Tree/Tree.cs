@@ -64,6 +64,5 @@ namespace NovelNestLibraryAPI.Tree
 
             return false;
         }
-
     }
 }

@@ -18,15 +18,16 @@ namespace NovelNestLibraryAPI.Controllers
         }
 
         [HttpGet("CreateTree")]
-        public void Get()
+        public Tree<CallNumberModel> Get()
         {
-            _treeService.CreateTree();
+           return _treeService.CreateTree();
         }
-
-        [HttpGet("GetPath/{callNumber}")]
-        public ActionResult<List<int>> Get(int callNumber)
+        [HttpGet("Quiz")]
+        public List<List<CallNumberModel>> GetRandomPath()
         {
-            return _treeService.GetPathToNode(callNumber);
+            return _treeService.CreateQuiz();
+
+            // Check if the data is not null or empty before returning
         }
     }
 }
