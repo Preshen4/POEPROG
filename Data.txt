@@ -30,11 +30,11 @@
 		222 | Historical books of Old Testament
 		223 | Poetic books of Old Testament
 		224 | Prophetic books of Old Testament
-	250 | Christian orders and local church
-		250 | Local Christian church and Christian religious orders
+	250 | Christian pastoral practice & religious orders
 		251 | Preaching (Homiletics)
-		254 | Parish administration
+		254 | Local church administration
 		255 | Religious congregations and orders
+		259 | Pastoral care of families & groups of people 
 	270 | History of Christianity
 		274 | Christianity in Europe
 		276 | Christianity in Africa
@@ -47,14 +47,14 @@
 		316 | General statistics of Africa
 		317 | General statistics of North America
 	320 | Political science
-		322 | Relation of state to organized groups and their members
+		322 | Relation of state to organized groups
 		326 | Slavery and emancipation
 		327 | International relations
 		328 | The legislative process
 	350 | Public administration and military science
 		351 | Public administration
 		357 | Mounted forces and warfare
-		358 | Air and other specialized forces and warfare; engineering and related services
+		358 | Air & other specialized forces
 		359 | Sea forces and warfare
 	370 | Education
 		371 | Schools and their activities, special education
@@ -63,14 +63,14 @@
 		374 | Adult education
 400 | Language
 	410 | Linguistics
-		415 | Grammar of standard forms of languages
+		415 | Grammar
 		417 | Dialectology and historical linguistics
-		418 | Standard usage (Prescriptive linguistics)
+		418 | Applied linguistics
 		419 | Sign languages
 	420 | English and Old English languages
-		421 | Writing system, phonology, phonetics of standard English
+		421 | Writing system, phonology, phonetics
 		422 | Etymology of standard English
-		427 | Historical and geographical variations, modern nongeographic variations of English
+		427 | English language variations
 		429 | Old English (Anglo-Saxon)
 	460 | Spanish, Portuguese, Galician
 		461 | Writing systems, phonology, phonetics of standard Spanish
